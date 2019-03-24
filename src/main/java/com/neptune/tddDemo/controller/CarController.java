@@ -1,16 +1,30 @@
 package com.neptune.tddDemo.controller;
 
+import com.neptune.tddDemo.exception.CarNotFoundException;
 import com.neptune.tddDemo.model.Car;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import com.neptune.tddDemo.service.CarService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CarController {
 
+    private CarService carService;
+
+    public CarController(CarService carService) {
+        this.carService = carService;
+    }
+
     @GetMapping("/cars/{name}")
     private Car getCarByName(@PathVariable String name){
-        return null;
+        return carService.getCarDetails(name);
+    }
+
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    private void carNotFoundHandler(CarNotFoundException ex){
+
     }
 
 }

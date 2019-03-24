@@ -1,9 +1,15 @@
 package com.neptune.tddDemo.model;
 
 public class Car {
-	private String brand,type;
+	private String brand;
+	private String type;
 
-	public String getBrand() {
+    public Car(String brand, String type) {
+		this.brand = brand;
+		this.type = type;
+	}
+
+    public String getBrand() {
 		return this.brand;
 	}
 

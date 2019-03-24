@@ -21,7 +21,7 @@ public class TddDemoApplicationTests {
 	private TestRestTemplate restTemplate;
 
 	@Test
-	public void testName() throws Exception {
+	public void getCar_returnsCarDetails() throws Exception {
 		//arrange
 		
 		//action
