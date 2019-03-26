@@ -10,7 +10,6 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -22,7 +21,7 @@ public class CarServiceTest {
 
     @Before
     public void setUp() throws Exception{
-        carService=new CarService(carRepository);
+        carService=new CarService();
     }
 
     @Test

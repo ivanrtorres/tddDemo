@@ -10,11 +10,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class CarController {
 
+    @Autowired
     private CarService carService;
-
-    public CarController(CarService carService) {
-        this.carService = carService;
-    }
 
     @GetMapping("/cars/{name}")
     private Car getCarByName(@PathVariable String name){
